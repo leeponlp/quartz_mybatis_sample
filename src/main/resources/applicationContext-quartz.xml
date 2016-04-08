@@ -14,7 +14,7 @@
 		http://www.springframework.org/schema/tx 
 		http://www.springframework.org/schema/tx/spring-tx-3.1.xsd ">
 
-	<bean id="demojob" class="cn.leepon.job.DemoJob" />
+	<bean id="demojob" class="cn.leepon.job.DemoJob" /> 
 
 	<!-- 定义调用对象和调用对象的方法 -->
 	<bean id="demojobtask" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
@@ -35,7 +35,7 @@
 		</property>
 		<!-- cron表达式 -->
 		<property name="cronExpression">
-			<value>0 35 15 * * ? </value>
+			<value>0 46 17 * * ? </value>
 		</property>
 	</bean>
 

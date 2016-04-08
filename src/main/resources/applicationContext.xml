@@ -17,6 +17,12 @@
     <context:component-scan base-package="cn.leepon.*">
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
+    
+    <!-- Spring AOP 注解 -->
+	<aop:aspectj-autoproxy />
+    
+    
+    
 	<!-- 引用配置文件 -->
 	<!-- <context:property-placeholder location="classpath:mysql_db.properties" />   -->
 	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
@@ -29,6 +35,8 @@
         <property name="ignoreUnresolvablePlaceholders" value="true"/>
     </bean>
 	
+	<!-- 管理切面 -->
+	<bean id="demoJobAspect" class="cn.leepon.aop.DemoJobAspect" />
 	
 	<import resource="classpath*:applicationContext-leepon_db.xml"/>
 	<import resource="classpath*:applicationContext-quartz.xml"/>
