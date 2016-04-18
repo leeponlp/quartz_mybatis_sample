@@ -20,6 +20,8 @@ public class SimpleTrigger {
 	
 	public static void main(String[] args) {
 		
+		
+		
 		// 创建一个JobDetail实例，指定MyJob
 		JobDetail jobDetail = JobBuilder.newJob(MyJob.class).withIdentity("job1", "group1")
 							                                .withDescription("simpletrigger_job_demo").build();
