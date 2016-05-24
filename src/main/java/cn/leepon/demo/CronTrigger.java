@@ -26,7 +26,8 @@ public class CronTrigger {
 		jobDataMap.put("description", "crontrigger_job_demo");
 		
 		Trigger trigger = TriggerBuilder.newTrigger().withIdentity(new TriggerKey("trigger2", "group1"))
-				.withDescription("based group1 with trigger2").withSchedule(CronScheduleBuilder.cronSchedule("0 07 18 * * ?"))
+				.withDescription("based group1 with trigger2")
+				.withSchedule(CronScheduleBuilder.cronSchedule("0 07 18 * * ?"))
 				.build();
 		ScheduleJob.scheduleJob(jobDetail, trigger); 
 		

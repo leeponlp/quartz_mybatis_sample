@@ -3,7 +3,6 @@ package cn.leepon.demo;
 import java.util.Date;
 
 import org.quartz.JobBuilder;
-import org.quartz.JobDataMap;
 import org.quartz.JobDetail;
 import org.quartz.SimpleScheduleBuilder;
 import org.quartz.Trigger;
@@ -24,11 +23,13 @@ public class SimpleTrigger {
 		
 		// 创建一个JobDetail实例，指定MyJob
 		JobDetail jobDetail = JobBuilder.newJob(MyJob.class).withIdentity("job1", "group1")
-							                                .withDescription("simpletrigger_job_demo").build();
+			.withDescription("simpletrigger_job_demo").build();
+		
+ 		
 		
 		//持有任务的状态信息
-		JobDataMap jobDataMap = jobDetail.getJobDataMap();
-		jobDataMap.put("description", "simpletrigger_job_demo"); 
+		//JobDataMap jobDataMap = jobDetail.getJobDataMap();
+		//jobDataMap.put("description", "simpletrigger_job_demo"); 
 		
 		// 通过Trigger定义调度规则：马上启动，每2秒运行一次
 		Trigger trigger = TriggerBuilder.newTrigger().withIdentity(new TriggerKey("trigger1", "group1"))
